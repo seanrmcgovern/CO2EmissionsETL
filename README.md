@@ -1,1 +1,1 @@
-Read Me
+This is a C# ETL console application. The app fetches data on CO2 emissions for 6 countries from the World Bank API. The countries include the United States, Japan, China, India, France, and Brazil. The JSON response from the World Bank API is deserialized and transformed into C# objects, which are then stored into a SQLite database using relational database architecture.
