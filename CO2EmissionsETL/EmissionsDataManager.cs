@@ -35,7 +35,7 @@ namespace CO2EmissionsETL
                         Year INTEGER,
                         Status TEXT,
                         Unit TEXT,
-                        EmissionsValue NUMERIC(8, 4),
+                        EmissionsValue TEXT,
                         Date DATETIME,
                         Version INTEGER,
                         FOREIGN KEY (CountryId) REFERENCES Countries(Id),
@@ -124,7 +124,7 @@ namespace CO2EmissionsETL
                     emissionsCommand.Parameters.AddWithValue("@Year", emissionsData.Date);
                     emissionsCommand.Parameters.AddWithValue("@Status", emissionsData.ObsStatus);
                     emissionsCommand.Parameters.AddWithValue("@Unit", emissionsData.Unit);
-                    emissionsCommand.Parameters.AddWithValue("@EmissionsValue", emissionsData.Value);
+                    emissionsCommand.Parameters.AddWithValue("@EmissionsValue", emissionsData.Value.ToString());
                     emissionsCommand.Parameters.AddWithValue("@Date", DateTime.Now);
                     emissionsCommand.Parameters.AddWithValue("@Version", version);
                     rowsInserted = emissionsCommand.ExecuteNonQuery();
